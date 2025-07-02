@@ -11,16 +11,20 @@ This repository contains an end-to-end data engineering pipeline that processes 
 
 ## 🗂 Project Structure
 nyc_taxi_spark_pipeline/
-├── data/                          # Raw input CSVs
-├── output/                        # Cleaned & transformed parquet data
-├── logs/quality/                 # JSON quality reports
-├── scripts/                      # Spark job scripts
-├── utils/                        # Spark session utils
-├── docker/                       # Dockerfiles for Spark/Postgres
-├── jars/                         # PostgreSQL JDBC driver
-├── requirements.txt              # Python dependencies
+├── data/                    # Raw input CSVs
+├── output/                  # Cleaned & transformed parquet data
+├── logs/
+│   └── quality/             # JSON quality reports
+├── scripts/                 # Spark job scripts
+├── utils/                   # Spark session utils
+├── docker/                  # Dockerfiles for Spark/Postgres
+│   ├── postgres/
+│   │   └── init.sql
+│   └── spark/
+│       └── Dockerfile
+├── jars/                    # PostgreSQL JDBC driver
+├── requirements.txt         # Python dependencies
 └── README.md
-
 ---
 
 ## 🔁 Pipeline Workflow
