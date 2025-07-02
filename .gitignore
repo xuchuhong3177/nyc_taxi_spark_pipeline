@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Logs and reports
+logs/**
+!logs/quality/data_quality_report.json
+
+# Spark warehouse / checkpoints
+spark-warehouse/
+.metastore_db/
+.derby.log
+
+# Output files
+output/
+artifacts/
+
+# Jupyter / IPython
+.ipynb_checkpoints/
+
+# VSCode or PyCharm
+.vscode/
+.idea/
+
+# System
+.DS_Store

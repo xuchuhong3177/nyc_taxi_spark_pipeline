@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  spark:
+    build: ./spark
+    container_name: spark
+    depends_on:
+      - postgres
+    volumes:
+      - ../:/app
+    working_dir: /app
+    command: tail -f /dev/null
+    environment:
+      - SPARK_MODE=driver
+    ports:
+      - "4040:4040"
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: nyc_taxi
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 000000
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  pgdata:
